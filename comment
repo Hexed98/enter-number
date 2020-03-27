@@ -1,0 +1,26 @@
+user_list = []
+print("\nChoose any 4 discrete integers in the set [1, 4]. Do not choose duplicates,please.")
+
+i = 0
+# This is a comment
+while i < 5:
+    try:
+        number_choice = int(input("\nNumber %d?\n> " % i))
+
+        if (0 <= number_choice <= 4) and isinstance(number_choice, int):
+            if number_choice in user_list:
+                print('No duplicates, please!')
+                continue
+            i += 1
+            user_list.append(number_choice)
+            print("Your list so far: %r" % user_list)
+        elif (number_choice < 0) or (number_choice > 4):
+            print("'Please keep it in the set of [1, 4].'")
+            pass
+        else:
+            pass
+
+    except ValueError:
+        print("'That isn't an integer, is it? Please re-enter a valid value, thank you!'")
+
+print("Thank you!")
